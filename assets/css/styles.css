@@ -1,0 +1,309 @@
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.buttons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+}
+.buttons li {
+  border: none;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.5s ease;
+}
+.buttons li:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+.buttons .activeBtn {
+  transform: rotate(180deg) scale(0);
+}
+.buttons #top {
+  position: absolute;
+  top: 0%;
+  left: calc(50% - (96px / 2));
+}
+.buttons #bottom {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - (107.58px / 2));
+}
+.buttons #left {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+}
+.buttons #right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.top-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  background: #6c567b;
+  text-align: center;
+  transition: all 0.9s cubic-bezier(0.6, 0.05, 0.4, 1);
+}
+.top-layer.active {
+  top: 0%;
+}
+.top-layer .home {
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 2em;
+  justify-content: center;
+  line-height: 0;
+  align-items: center;
+  height: 100%;
+}
+.top-layer .home .download {
+  position: relative;
+  z-index: 3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f72359;
+  padding: 1em 2em;
+  border: none;
+  color: white;
+  font-size: 0.5em;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.top-layer .home .download span {
+  position: relative;
+  pointer-events: none;
+}
+.top-layer .home .download::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #4405f7, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+.top-layer .home .download:hover::before {
+  --size: 400px;
+}
+
+.top-layer--2 {
+  background: #393e46;
+  transition-delay: 0.6s;
+}
+
+.top-layer--3 {
+  background: #6c5b7b;
+  transition-delay: 0.4s;
+}
+
+.top-layer--4 {
+  background: #c06c84;
+  transition-delay: 0.2s;
+}
+
+.top-layer--5 {
+  background: #f67280;
+  transition-delay: 0.1s;
+}
+
+.bottom-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  background: #48466d;
+  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.bottom-layer.active {
+  top: 0%;
+}
+.bottom-layer .contact {
+  display: grid;
+  position: relative;
+  width: calc(100% - 19em);
+  margin: 6em auto 0;
+  z-index: 2;
+}
+.bottom-layer .contact h1 {
+  text-align: center;
+}
+.bottom-layer .contact .contactBox .leftSide {
+  width: 50%;
+}
+.bottom-layer .contact .contactBox .leftSide form {
+  transform: translateY(2em);
+  display: grid;
+  grid-gap: 4em;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group {
+  color: #393e46;
+  font-weight: bold;
+  position: relative;
+  display: grid;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group .send {
+  position: absolute;
+  padding: 1em 0.6em;
+  transition: ease 1s all;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group input {
+  width: 100%;
+  height: 3em;
+  font-size: 1em;
+  border: none;
+  border-bottom: #393e46 2px solid;
+  background: none;
+  outline: none;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group input:focus + label {
+  transform: translateY(-2em);
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group input[type=submit] {
+  width: 7em;
+  color: #393e46;
+  border: 2px solid #393e46;
+  font-weight: bold;
+  transition: ease 1s all;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group input[type=submit]:hover {
+  color: #d3d3d3;
+  background-color: #393e46;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group input :valid {
+  border-bottom: green;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group textarea {
+  font-size: 1em;
+  border: none;
+  border-bottom: #393e46 2px solid;
+  background: none;
+  resize: none;
+  padding: 0 0.5em;
+  min-height: 3em;
+  max-height: 50vh;
+  overflow: hidden;
+  outline: none;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group textarea:focus + label {
+  transform: translateY(-2em);
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group textarea:not(:invalid) + label {
+  transform: translateY(-2em);
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group label {
+  position: absolute;
+  left: 1em;
+  top: 0em;
+  padding: 0.5em 0 0;
+  transition: all 0.5s ease;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group small {
+  padding: 0.5em;
+}
+
+.bottom-layer--2 {
+  background: #ecf3a3;
+  transition-delay: 0.12s;
+}
+
+.bottom-layer--3 {
+  background: #95a792;
+  transition-delay: 0.4s;
+}
+
+.left-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  bottom: auto;
+  right: auto;
+  background: #4d606e;
+  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.left-layer.active {
+  left: 0%;
+}
+
+.left-layer--2 {
+  background: #d3d4d8;
+  transition-delay: 0.3s;
+}
+
+.left-layer--3 {
+  background: #d3d4d8;
+  transition-delay: 0.12s;
+}
+
+.left-layer--4 {
+  background: #c06c84;
+  transition-delay: 0.08s;
+}
+
+.right-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  bottom: auto;
+  right: auto;
+  background: #7f4a88;
+  transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.right-layer.active {
+  left: 0%;
+}
+
+.right-layer--2 {
+  background: #c79ecf;
+  transition-delay: 0.3s;
+}
+
+.right-layer--3 {
+  background: #fe9191;
+  transition-delay: 0.2s;
+}
+
+/*# sourceMappingURL=styles.css.map */
