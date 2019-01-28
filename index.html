@@ -56,18 +56,18 @@
                         </div>
                 <div class="leftSide">
                     <!--form goes here-->
-                    <form>
+                    <form method="POST" action="https://formspree.io/rawaldeepsingh26@gmail.com">
                             <div class="form-group">
-                                    <input type="text" required pattern="\S+.*">
+                                    <input type="text" name="name" required pattern="\S+.*">
                                     <label>Name</label>
                                   </div>
                             <div class="form-group">
-                                    <input type="email" pattern="[^ @]*@[^ @]*" required>
+                                    <input type="email" name="email" pattern="[^ @]*@[^ @]*" required>
                                     <label>Email address</label>
                                     <small>We'll never share your email with anyone else.</small>
                                   </div>
                                   <div class="form-group">
-                                        <textarea class="textArea" data-gramm_editor="false" required></textarea>
+                                        <textarea class="textArea" name="message" data-gramm_editor="false" required></textarea>
                                         <label>Message</label>
                                       </div>
                             <div class="form-group">
