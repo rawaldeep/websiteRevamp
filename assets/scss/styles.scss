@@ -10,7 +10,8 @@ html {
 }
 body {
 	height: 100%;
-	overflow: hidden;
+    overflow: hidden;
+    touch-action: none;
 }
 .buttons {
 	position: absolute;
@@ -159,10 +160,31 @@ body {
         width: calc(100% - 19em);
         margin: 6em auto 0;
         z-index: 2;
-    h1{text-align: center;}
+    
     .contactBox{
+        display: inherit;
+        -ms-grid-column: 50% 50%;
+        grid-template-columns: 50% 50%;
+
+        .rightSide{
+            color: #393e46;
+            display: inherit;
+            width: 80%;
+            grid-gap: 0.6em;
+        h1{ 
+            text-align: left;
+            span{
+                font-size: 1.6em;
+            }
+        }
+        p{
+            font-size: 1.2em;
+            
+        
+        }
+        }
         .leftSide{
-            width: 50%;
+            width: 100%;
             form{
                 transform: translateY(2em);
                 display: grid;
@@ -201,9 +223,6 @@ body {
                                 background-color: #393e46;
                             }
                         }
-                        :valid {
-                            border-bottom: green;
-                          }
                     }
                     
                     textarea{
@@ -217,6 +236,9 @@ body {
                         max-height: 50vh;
                         overflow: hidden;
                         outline: none;
+                        + label{
+                            transform: translateY(-1em);
+                        } 
                         &:focus{
                             + label{
                                 transform: translateY(-2em);
@@ -266,7 +288,58 @@ body {
 	transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
 	&.active {
 		left: 0%;
-	}
+    }
+    .myWork{
+        position: relative;
+        width: 80%;
+        height: 70%;
+        margin: auto;
+        top: 5em;
+        z-index: 3;
+        ::-webkit-scrollbar {
+            width: 0.5em;
+          }
+          
+          /* Track */
+          ::-webkit-scrollbar-track {
+            background: none; 
+          }
+           
+          /* Handle */
+          ::-webkit-scrollbar-thumb {
+            background: #393e46; 
+            border-radius: 1em;
+          }
+          
+          /* Handle on hover */
+          ::-webkit-scrollbar-thumb:hover {
+            background: #393939; 
+            border-radius: 1em;
+          }
+        h1{
+            text-align: center;
+            width: 100%;
+        }
+        .workBox{
+            height: 85%;
+            overflow-y: auto;
+            ul{
+                width: 100%;
+                padding: 0;
+                display: flex;
+                list-style: none;
+                justify-content: space-around;
+                li{
+                    width: calc(100%/2);
+                    padding: 1.5em;
+                   img{
+                       width: 100%;
+                   }
+                }
+
+            }
+        }
+    }
 }
 .left-layer--2 {
 	background: #d3d4d8;
@@ -292,7 +365,47 @@ body {
 	transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
 	&.active {
 		left: 0%;
-	}
+    }
+    .about{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 0;
+        background-image: url(../img/pun.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: 131%;
+        .aboutBox{
+            position: relative;
+            width: calc(100% - 33em);
+            height: 70%;
+            top: 6em;
+            left: 9em;
+            z-index: 2;
+        P{
+            text-align: left;
+        }
+        ul{
+            padding: 0 1em;
+            float: left;
+            margin: 0;
+            list-style: none;
+            justify-content: space-evenly;
+            flex-flow: column wrap;
+            display: flex;
+            li{
+                width: 100px;
+                line-height: 30px;
+                margin: 0.5em 0;
+                text-align: center;
+                color: #e3e3e3;
+                background-color: #393e46;
+
+            }
+        }
+        }
+    }
 }
 .right-layer--2 {
 	background: #c79ecf;
@@ -302,4 +415,3 @@ body {
 	background: #fe9191;
 	transition-delay: 0.2s;
 }
-

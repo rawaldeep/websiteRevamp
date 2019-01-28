@@ -13,6 +13,7 @@ html {
 body {
   height: 100%;
   overflow: hidden;
+  touch-action: none;
 }
 
 .buttons {
@@ -164,11 +165,28 @@ body {
   margin: 6em auto 0;
   z-index: 2;
 }
-.bottom-layer .contact h1 {
-  text-align: center;
+.bottom-layer .contact .contactBox {
+  display: inherit;
+  -ms-grid-column: 50% 50%;
+  grid-template-columns: 50% 50%;
+}
+.bottom-layer .contact .contactBox .rightSide {
+  color: #393e46;
+  display: inherit;
+  width: 80%;
+  grid-gap: 0.6em;
+}
+.bottom-layer .contact .contactBox .rightSide h1 {
+  text-align: left;
+}
+.bottom-layer .contact .contactBox .rightSide h1 span {
+  font-size: 1.6em;
+}
+.bottom-layer .contact .contactBox .rightSide p {
+  font-size: 1.2em;
 }
 .bottom-layer .contact .contactBox .leftSide {
-  width: 50%;
+  width: 100%;
 }
 .bottom-layer .contact .contactBox .leftSide form {
   transform: translateY(2em);
@@ -209,9 +227,6 @@ body {
   color: #d3d3d3;
   background-color: #393e46;
 }
-.bottom-layer .contact .contactBox .leftSide form .form-group input :valid {
-  border-bottom: green;
-}
 .bottom-layer .contact .contactBox .leftSide form .form-group textarea {
   font-size: 1em;
   border: none;
@@ -223,6 +238,9 @@ body {
   max-height: 50vh;
   overflow: hidden;
   outline: none;
+}
+.bottom-layer .contact .contactBox .leftSide form .form-group textarea + label {
+  transform: translateY(-1em);
 }
 .bottom-layer .contact .contactBox .leftSide form .form-group textarea:focus + label {
   transform: translateY(-2em);
@@ -265,6 +283,53 @@ body {
 .left-layer.active {
   left: 0%;
 }
+.left-layer .myWork {
+  position: relative;
+  width: 80%;
+  height: 70%;
+  margin: auto;
+  top: 5em;
+  z-index: 3;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.left-layer .myWork ::-webkit-scrollbar {
+  width: 0.5em;
+}
+.left-layer .myWork ::-webkit-scrollbar-track {
+  background: none;
+}
+.left-layer .myWork ::-webkit-scrollbar-thumb {
+  background: #393e46;
+  border-radius: 1em;
+}
+.left-layer .myWork ::-webkit-scrollbar-thumb:hover {
+  background: #393939;
+  border-radius: 1em;
+}
+.left-layer .myWork h1 {
+  text-align: center;
+  width: 100%;
+}
+.left-layer .myWork .workBox {
+  height: 85%;
+  overflow-y: auto;
+}
+.left-layer .myWork .workBox ul {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+.left-layer .myWork .workBox ul li {
+  width: calc(100%/2);
+  padding: 1.5em;
+}
+.left-layer .myWork .workBox ul li img {
+  width: 100%;
+}
 
 .left-layer--2 {
   background: #d3d4d8;
@@ -294,6 +359,45 @@ body {
 }
 .right-layer.active {
   left: 0%;
+}
+.right-layer .about {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  background-image: url(../img/pun.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 131%;
+}
+.right-layer .about .aboutBox {
+  position: relative;
+  width: calc(100% - 33em);
+  height: 70%;
+  top: 6em;
+  left: 9em;
+  z-index: 2;
+}
+.right-layer .about .aboutBox P {
+  text-align: left;
+}
+.right-layer .about .aboutBox ul {
+  padding: 0 1em;
+  float: left;
+  margin: 0;
+  list-style: none;
+  justify-content: space-evenly;
+  flex-flow: column wrap;
+  display: flex;
+}
+.right-layer .about .aboutBox ul li {
+  width: 100px;
+  line-height: 30px;
+  margin: 0.5em 0;
+  text-align: center;
+  color: #e3e3e3;
+  background-color: #393e46;
 }
 
 .right-layer--2 {
