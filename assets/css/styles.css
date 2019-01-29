@@ -41,7 +41,7 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .buttons li {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }
 .buttons .activeBtn {
@@ -74,7 +74,7 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .buttons #left {
-    top: 75%;
+    top: 85%;
   }
 }
 .buttons #right {
@@ -84,7 +84,7 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .buttons #right {
-    top: 75%;
+    top: 85%;
   }
 }
 
@@ -226,7 +226,7 @@ body {
     display: flex;
     width: 70%;
     grid-row: 2;
-    bottom: -10em;
+    bottom: -6em;
     left: 3.5em;
     position: absolute;
     flex-flow: row wrap;
@@ -238,7 +238,7 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .bottom-layer .contact .contactBox .rightSide h1 {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }
 .bottom-layer .contact .contactBox .rightSide h1 span {
@@ -246,7 +246,7 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .bottom-layer .contact .contactBox .rightSide h1 span {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 .bottom-layer .contact .contactBox .rightSide p {
@@ -254,6 +254,7 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .bottom-layer .contact .contactBox .rightSide p {
+    margin: 0.4em 0;
     font-size: 0.8em;
   }
 }
@@ -267,7 +268,8 @@ body {
 }
 @media only screen and (max-width: 450px) {
   .bottom-layer .contact .contactBox .leftSide form {
-    grid-gap: 2em;
+    grid-gap: 1.8em;
+    font-size: 0.8em;
     grid-row: 1;
   }
 }
@@ -411,6 +413,11 @@ body {
   width: calc(100%/2);
   padding: 1.5em;
 }
+@media only screen and (max-width: 450px) {
+  .left-layer .myWork .workBox ul li {
+    padding: 0.5em;
+  }
+}
 .left-layer .myWork .workBox ul li img {
   width: 100%;
 }
@@ -474,9 +481,11 @@ body {
 @media only screen and (max-width: 450px) {
   .right-layer .about .aboutBox {
     width: calc(100% - 9em);
-    top: 4em;
+    top: 2em;
+    height: 80%;
+    overflow: scroll;
     left: 3em;
-    z-index: 0;
+    z-index: 3;
   }
 }
 .right-layer .about .aboutBox P {
