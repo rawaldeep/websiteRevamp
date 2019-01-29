@@ -13,7 +13,6 @@ html {
 body {
   height: 100%;
   overflow: hidden;
-  touch-action: none;
 }
 
 .buttons {
@@ -40,6 +39,11 @@ body {
 .buttons li:hover {
   background: rgba(0, 0, 0, 0.04);
 }
+@media only screen and (max-width: 450px) {
+  .buttons li {
+    font-size: 1em;
+  }
+}
 .buttons .activeBtn {
   transform: rotate(180deg) scale(0);
 }
@@ -48,25 +52,46 @@ body {
   top: 0%;
   left: calc(50% - (96px / 2));
 }
+@media only screen and (max-width: 450px) {
+  .buttons #top {
+    left: calc(50% - (64px / 2));
+  }
+}
 .buttons #bottom {
   position: absolute;
   bottom: 0;
   left: calc(50% - (107.58px / 2));
+}
+@media only screen and (max-width: 450px) {
+  .buttons #bottom {
+    left: calc(50% - (71.72px / 2));
+  }
 }
 .buttons #left {
   position: absolute;
   top: 50%;
   left: 0px;
 }
+@media only screen and (max-width: 450px) {
+  .buttons #left {
+    top: 75%;
+  }
+}
 .buttons #right {
   position: absolute;
   top: 50%;
   right: 0;
 }
+@media only screen and (max-width: 450px) {
+  .buttons #right {
+    top: 75%;
+  }
+}
 
 .top-layer {
   position: absolute;
   width: 100%;
+  overflow: hidden;
   height: 100%;
   top: -100%;
   left: 0;
@@ -87,6 +112,11 @@ body {
   line-height: 0;
   align-items: center;
   height: 100%;
+}
+@media only screen and (max-width: 450px) {
+  .top-layer .home {
+    font-size: 1.3em;
+  }
 }
 .top-layer .home .download {
   position: relative;
@@ -147,6 +177,7 @@ body {
 .bottom-layer {
   position: absolute;
   width: 100%;
+  overflow: hidden;
   height: 100%;
   top: 100%;
   left: 0;
@@ -165,10 +196,24 @@ body {
   margin: 6em auto 0;
   z-index: 2;
 }
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact {
+    width: calc(100% - 5em);
+    height: 60%;
+    overflow-y: visible;
+  }
+}
 .bottom-layer .contact .contactBox {
   display: inherit;
   -ms-grid-column: 50% 50%;
   grid-template-columns: 50% 50%;
+}
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact .contactBox {
+    -ms-grid-column: 100%;
+    grid-template-columns: 100%;
+    grid-auto-flow: row;
+  }
 }
 .bottom-layer .contact .contactBox .rightSide {
   color: #393e46;
@@ -176,14 +221,41 @@ body {
   width: 80%;
   grid-gap: 0.6em;
 }
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact .contactBox .rightSide {
+    display: flex;
+    width: 70%;
+    grid-row: 2;
+    bottom: -10em;
+    left: 3.5em;
+    position: absolute;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
 .bottom-layer .contact .contactBox .rightSide h1 {
   text-align: left;
+}
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact .contactBox .rightSide h1 {
+    font-size: 1em;
+  }
 }
 .bottom-layer .contact .contactBox .rightSide h1 span {
   font-size: 1.6em;
 }
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact .contactBox .rightSide h1 span {
+    font-size: 1.2em;
+  }
+}
 .bottom-layer .contact .contactBox .rightSide p {
   font-size: 1.2em;
+}
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact .contactBox .rightSide p {
+    font-size: 0.8em;
+  }
 }
 .bottom-layer .contact .contactBox .leftSide {
   width: 100%;
@@ -192,6 +264,12 @@ body {
   transform: translateY(2em);
   display: grid;
   grid-gap: 4em;
+}
+@media only screen and (max-width: 450px) {
+  .bottom-layer .contact .contactBox .leftSide form {
+    grid-gap: 2em;
+    grid-row: 1;
+  }
 }
 .bottom-layer .contact .contactBox .leftSide form .form-group {
   color: #393e46;
@@ -272,6 +350,7 @@ body {
 .left-layer {
   position: absolute;
   width: 100%;
+  overflow: hidden;
   height: 100%;
   top: 0;
   left: -100%;
@@ -293,6 +372,11 @@ body {
   /* Track */
   /* Handle */
   /* Handle on hover */
+}
+@media only screen and (max-width: 450px) {
+  .left-layer .myWork {
+    z-index: 0;
+  }
 }
 .left-layer .myWork ::-webkit-scrollbar {
   width: 0.5em;
@@ -349,6 +433,7 @@ body {
 .right-layer {
   position: absolute;
   width: 100%;
+  overflow: hidden;
   height: 100%;
   top: 0;
   left: 100%;
@@ -371,6 +456,13 @@ body {
   background-size: contain;
   background-position-x: 131%;
 }
+@media only screen and (max-width: 450px) {
+  .right-layer .about {
+    width: 120%;
+    background-position-y: 100%;
+    overflow: hidden;
+  }
+}
 .right-layer .about .aboutBox {
   position: relative;
   width: calc(100% - 33em);
@@ -378,6 +470,14 @@ body {
   top: 6em;
   left: 9em;
   z-index: 2;
+}
+@media only screen and (max-width: 450px) {
+  .right-layer .about .aboutBox {
+    width: calc(100% - 9em);
+    top: 4em;
+    left: 3em;
+    z-index: 0;
+  }
 }
 .right-layer .about .aboutBox P {
   text-align: left;
@@ -390,6 +490,11 @@ body {
   justify-content: space-evenly;
   flex-flow: column wrap;
   display: flex;
+}
+@media only screen and (max-width: 450px) {
+  .right-layer .about .aboutBox ul:first-of-type {
+    padding: 0 0 0 4em;
+  }
 }
 .right-layer .about .aboutBox ul li {
   width: 100px;

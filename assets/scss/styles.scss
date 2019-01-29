@@ -11,7 +11,6 @@ html {
 body {
 	height: 100%;
     overflow: hidden;
-    touch-action: none;
 }
 .buttons {
 	position: absolute;
@@ -36,6 +35,9 @@ body {
 		&:hover {
             background: rgba(0,0,0,0.04);
         }
+        @media only screen and (max-width: 450px) {
+            font-size: 1em;
+        }
     }
     .activeBtn{
         transform: rotate(180deg) scale(0);
@@ -43,27 +45,41 @@ body {
 	#top {
 		position: absolute;
 		top: 0%;
-		left: calc(50% - (96px / 2));
+        left: calc(50% - (96px / 2));
+        @media only screen and (max-width: 450px) {
+            left: calc(50% - (64px / 2));
+        }
 	}
 	#bottom {
 		position: absolute;
 		bottom: 0;
-		left: calc(50% - (107.58px / 2));
+        left: calc(50% - (107.58px / 2));
+        
+        @media only screen and (max-width: 450px) {
+            left: calc(50% - (71.72px / 2));
+        }
 	}
 	#left {
 		position: absolute;
 		top: 50%;
-		left: 0px;
+        left: 0px;
+        @media only screen and (max-width: 450px) {
+            top: 75%;
+        }
 	}
 	#right {
 		position: absolute;
 		top: 50%;
-		right: 0;
+        right: 0;
+        @media only screen and (max-width: 450px) {
+            top: 75%;
+        }
 	}
 }
 .top-layer {
 	position: absolute;
-	width: 100%;
+    width: 100%;
+    overflow: hidden;
 	height: 100%;
 	top: -100%;
 	left: 0;
@@ -84,6 +100,9 @@ body {
         line-height: 0;
         align-items: center;
         height: 100%;
+        @media only screen and (max-width: 450px) {
+            font-size: 1.3em;
+        }
         .download {
             position: relative;
             z-index: 3;
@@ -143,7 +162,8 @@ body {
 }
 .bottom-layer {
 	position: absolute;
-	width: 100%;
+    width: 100%;
+    overflow: hidden;
 	height: 100%;
 	top: 100%;
 	left: 0;
@@ -160,25 +180,54 @@ body {
         width: calc(100% - 19em);
         margin: 6em auto 0;
         z-index: 2;
+        @media only screen and (max-width: 450px) {
+            width: calc(100% - 5em);
+            height: 60%;
+            overflow-y: visible;
+        }
     
     .contactBox{
         display: inherit;
         -ms-grid-column: 50% 50%;
         grid-template-columns: 50% 50%;
+        @media only screen and (max-width: 450px) {
+            -ms-grid-column: 100%;
+            grid-template-columns: 100%;
+            grid-auto-flow: row;
+        }
 
         .rightSide{
             color: #393e46;
             display: inherit;
             width: 80%;
             grid-gap: 0.6em;
+            @media only screen and (max-width: 450px) {
+                display: flex;
+                width: 70%;
+                grid-row: 2;
+                bottom: -10em;
+                left: 3.5em;
+                position: absolute;
+                flex-flow: row wrap;
+    justify-content: space-between;
+            }
         h1{ 
             text-align: left;
+            @media only screen and (max-width: 450px) {
+                font-size: 1em;
+            }
             span{
                 font-size: 1.6em;
+                @media only screen and (max-width: 450px) {
+                    font-size: 1.2em;
+                }
             }
         }
         p{
             font-size: 1.2em;
+            @media only screen and (max-width: 450px) {
+                font-size: 0.8em;
+            }
             
         
         }
@@ -189,6 +238,10 @@ body {
                 transform: translateY(2em);
                 display: grid;
                 grid-gap: 4em;
+                @media only screen and (max-width: 450px) {
+                    grid-gap: 2em;
+                    grid-row: 1;
+                }
                 .form-group{
                     color: #393e46;
                     font-weight: bold;
@@ -278,7 +331,8 @@ body {
 }
 .left-layer {
 	position: absolute;
-	width: 100%;
+    width: 100%;
+    overflow: hidden;
 	height: 100%;
 	top: 0;
 	left: -100%;
@@ -296,6 +350,9 @@ body {
         margin: auto;
         top: 5em;
         z-index: 3;
+        @media only screen and (max-width: 450px) {
+            z-index: 0;
+        }
         ::-webkit-scrollbar {
             width: 0.5em;
           }
@@ -356,6 +413,7 @@ body {
 .right-layer {
 	position: absolute;
 	width: 100%;
+    overflow: hidden;
 	height: 100%;
 	top: 0;
 	left: 100%;
@@ -376,6 +434,11 @@ body {
         background-repeat: no-repeat;
         background-size: contain;
         background-position-x: 131%;
+        @media only screen and (max-width: 450px) {
+            width: 120%;
+            background-position-y: 100%;
+            overflow: hidden;
+        }
         .aboutBox{
             position: relative;
             width: calc(100% - 33em);
@@ -383,6 +446,12 @@ body {
             top: 6em;
             left: 9em;
             z-index: 2;
+            @media only screen and (max-width: 450px) {
+                width: calc(100% - 9em);
+                top: 4em;
+                left: 3em;
+                z-index: 0;
+            }
         P{
             text-align: left;
         }
@@ -394,6 +463,11 @@ body {
             justify-content: space-evenly;
             flex-flow: column wrap;
             display: flex;
+            &:first-of-type{
+                @media only screen and (max-width: 450px) {
+                    padding: 0 0 0 4em;
+                }
+            } 
             li{
                 width: 100px;
                 line-height: 30px;
